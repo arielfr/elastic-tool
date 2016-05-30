@@ -1,0 +1,108 @@
+{
+  "template": "template-*",
+  "order": 0,
+  "body": {
+    "settings" : {
+      "index" : {
+        "number_of_shards" : 5,
+        "number_of_replicas": 0
+      }
+    },
+    "mappings": {
+      "search": {
+        "_all" : { "enabled" : false },
+        "_timestamp": {
+          "enabled": true,
+          "path": "@timestamp",
+          "store": true
+        },
+        "dynamic": false,
+        "properties": {
+          "@timestamp": { "type": "date"},
+          "site": { "type": "string", "index": "not_analyzed"},
+          "request": {
+            "type": "object",
+            "dynamic": false,
+            "properties": {
+              "request_id": { "type": "string", "index": "not_analyzed"},
+              "session_id": { "type": "string", "index": "not_analyzed"},
+              "user_agent": {"type": "object", "dynamic": false },
+              "url": { "type": "string", "index": "not_analyzed"},
+              "utm_source": { "type": "string", "index": "not_analyzed"},
+              "utm_medium": { "type": "string", "index": "not_analyzed"},
+              "query": {"type": "object", "dynamic": false },
+              "referer": {
+                "type": "object",
+                "dynamic": false,
+                "properties": {
+                  "url": { "type": "string", "index": "not_analyzed"},
+                  "intra_site": { "type":"boolean" }
+                }
+              }
+            }
+          },
+          "visitor": {
+            "type": "object",
+            "dynamic": false,
+            "properties": {
+              "visitor_id": { "type": "string", "index": "not_analyzed"},
+              "locale": { "type": "string", "index": "not_analyzed"},
+              "remote_address": {
+                "type": "object",
+                "dynamic": false,
+                "properties": {
+                  "ip": { "type": "string", "index": "not_analyzed"},
+                  "country": { "type": "string", "index": "not_analyzed"},
+                  "region": { "type": "string", "index": "not_analyzed"},
+                  "city": { "type": "string", "index": "not_analyzed"},
+                  "location": { "type" : "geo_point"}
+                }
+              }
+            }
+          },
+          "search": {
+            "type": "object",
+            "dynamic": false,
+            "properties": {
+              "free_text": { "type":"boolean" },
+              "text": { "type": "string" },
+              "text_na": { "type": "string", "index": "not_analyzed" },
+              "location": {
+                "type":"object",
+                "dynamic": false,
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string", "index": "not_analyzed"}
+                }
+              },
+              "product_type": {
+                "type":"object",
+                "dynamic": false,
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string", "index": "not_analyzed"}
+                }
+              },
+              "rooms": {
+                "type":"object",
+                "dynamic": false,
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string", "index": "not_analyzed"}
+                }
+              },
+              "amenities": {
+                "type":"object",
+                "dynamic": false,
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string", "index": "not_analyzed"}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

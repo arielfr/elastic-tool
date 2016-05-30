@@ -1,0 +1,14 @@
+{
+  "index": "example",
+  "type": "users",
+  "records": [
+    {
+      "firstname": "Ariel",
+      "lastname": "Rey"
+    },
+    {
+      "id": "Juan",
+      "title": "Perez"
+    }
+  ]
+}

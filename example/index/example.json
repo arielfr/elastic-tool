@@ -1,0 +1,21 @@
+{
+  "index": "example",
+  "body": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "sortable": {
+            "type": "custom",
+            "tokenizer": "keyword",
+            "filter": ["lowercase"]
+          },
+          "path_hierarchy": {
+            "type": "custom",
+            "tokenizer": "path_hierarchy",
+            "filter": ["lowercase"]
+          }
+        }
+      }
+    }
+  }
+}
