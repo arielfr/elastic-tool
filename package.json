@@ -18,5 +18,15 @@
     "fs": "0.0.2",
     "lodash": "^4.13.1",
     "synchronize": "^0.9.15"
-  }
+  },
+  "readmeFilename": "README.md",
+  "keywords": [
+    "elasticsearch",
+    "elastic",
+    "commander",
+    "tool",
+    "mapping",
+    "type",
+    "index"
+  ]
 }

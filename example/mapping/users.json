@@ -5,8 +5,7 @@
 		"users": {
 			"properties": {
 				"firstname": { "type": "string" },
-				"lastname": { "type": "string" },
-				"phone": { "type": "string" }
+				"lastname": { "type": "string" }
 			}
 		}
 	}
