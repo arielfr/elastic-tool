@@ -111,7 +111,7 @@ program
 
 program
     .command('delete-by-id [index] [type] [id]')
-    .description('delete specific index')
+    .description('delete specific type element by id')
     .option('-h, --host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, type, id, commander){
