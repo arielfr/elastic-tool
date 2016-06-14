@@ -14,6 +14,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
+    "elastic-deletebyquery": "^1.0.6",
     "elasticsearch": "^11.0.1",
     "fs": "0.0.2",
     "lodash": "^4.13.1",
