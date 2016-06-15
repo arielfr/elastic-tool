@@ -151,6 +151,29 @@ program
         CLI.deleteAll(index, type);
     });
 
+program
+    .command('extract [index] [type] [output]')
+    .description('extract all the data from an specific index->type ready for put-data. output: /dir/file [-h -p -s=50 -t=30]')
+    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('-p --port [port]', 'specified port', '9200')
+    .option('-s --size [size]', 'size to export', 50)
+    .option('-t --time [time]', 'scroll time in seconds', '30')
+    .option('-f --force [force]', 'override file', false)
+    .option('-i --id [id]', 'prevent copy the id', false)
+    .action(function(index, type, output, commander){
+        CLI = new CLI({
+            host: commander.host,
+            port: commander.port
+        });
+
+        if(index === undefined || type === undefined || output === undefined){
+            console.log('All the parameters must be input'.red);
+            return;
+        }
+
+        CLI.extract(index, type, output, commander.size, commander.time, commander.force, commander.id);
+    });
+
 if (!process.argv.slice(2).length) {
     program.outputHelp();
 }
