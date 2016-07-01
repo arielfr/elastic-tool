@@ -2,13 +2,23 @@
 
 This is a Elasticsearch tool made with [commander](https://www.npmjs.com/package/commander) for making basic operations
 
+- Get Template/s
+- Get Index/es
 - Creating Index (One File or Multiple Files)
+- Open Index
+- Close Index
 - Creating Types - Mappings (One File or Multiple Files)
 - Auto detect changes on Type / Mapping file structure
 - Creating Templates (One File or Multiple Files)
 - Delete Index
 - Delete Template
 - Delete Type by ID
+- Get Repository/ies
+- Create Repository
+- Delete Repository
+- Get Snapshot/s
+- Create Snapshot
+- Delete Snapshot
 
 ## Installation
 
@@ -204,6 +214,23 @@ You can also reference *_parent* property
 ```
 
 In records, you will put the body content is the body from the Official API of Elasticsearch
+
+## Create repository
+
+The command will create a repository. Example:
+
+```json
+{
+	"repository": "repo_name",
+	"body": {
+		"type": "fs",
+		"settings": {
+			"compress": "true",
+			"location": "/env/snapshots"
+		}
+	}
+}
+```
 
 ## Example
 

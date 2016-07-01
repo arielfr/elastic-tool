@@ -1,0 +1,10 @@
+{
+	"repository": "repo_name",
+	"body": {
+		"type": "fs",
+		"settings": {
+			"compress": "true",
+			"location": "/env/snapshots"
+		}
+	}
+}
