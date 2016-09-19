@@ -1,7 +1,7 @@
 {
   "name": "elastic-tool",
-  "version": "1.0.0",
-  "description": "Elasticsearch tools",
+  "version": "1.0.1",
+  "description": "Elasticsearch tools on command line (index, mappings, repo, dump, etc...)",
   "bin": {
     "elastic": "app.js"
   },
