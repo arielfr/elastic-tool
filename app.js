@@ -11,7 +11,7 @@ program.version(pkg.version)
 
 program
     .command('get-template [name...]')
-    .description('get template or templates information [-h -p]')
+    .description('get template or templates information')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(template, commander){
@@ -40,7 +40,7 @@ program
 
 program
     .command('delete-template [name]')
-    .description('delete specific template [-h -p]')
+    .description('delete specific template')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(template, commander){
@@ -54,7 +54,7 @@ program
 
 program
     .command('get-index [name...]')
-    .description('get index or indexes info [-h -p]')
+    .description('get index or indexes info')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
@@ -83,7 +83,7 @@ program
 
 program
     .command('delete-index [name...]')
-    .description('delete specific index [-h -p]')
+    .description('delete specific index')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
@@ -97,7 +97,7 @@ program
 
 program
     .command('open-index [name...]')
-    .description('Open index or indexes [-h -p]')
+    .description('Open index or indexes')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
@@ -111,7 +111,7 @@ program
 
 program
     .command('close-index [name...]')
-    .description('close index or indexes [-h -p]')
+    .description('close index or indexes')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
@@ -173,7 +173,7 @@ program
 
 program
     .command('delete-by-id [index] [type] [id]')
-    .description('delete specific type element by id [-h -p]')
+    .description('delete specific type element by id')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, type, id, commander){
@@ -191,7 +191,7 @@ program
 
 program
     .command('delete-all [index] [type]')
-    .description('delete all the data in an specific type [-h -p]')
+    .description('delete all the data in an specific type')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, type, commander){
