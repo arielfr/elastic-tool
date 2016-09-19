@@ -12,7 +12,7 @@ program.version(pkg.version)
 program
     .command('get-template [name...]')
     .description('get template or templates information [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(template, commander){
         CLI = new CLI({
@@ -26,7 +26,7 @@ program
 program
     .command('put-template <file/folder>')
     .description('Create elasticsearch templates [-h -p -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
     .action(function(fileDirectory, commander){
@@ -41,7 +41,7 @@ program
 program
     .command('delete-template [name]')
     .description('delete specific template [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(template, commander){
         CLI = new CLI({
@@ -55,7 +55,7 @@ program
 program
     .command('get-index [name...]')
     .description('get index or indexes info [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
         CLI = new CLI({
@@ -69,7 +69,7 @@ program
 program
     .command('put-index <file/folder>')
     .description('Put indexes on elasticsearch [-h -p -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
     .action(function(fileDirectory, commander){
@@ -82,9 +82,9 @@ program
     });
 
 program
-    .command('delete-index [name]')
+    .command('delete-index [name...]')
     .description('delete specific index [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
         CLI = new CLI({
@@ -98,7 +98,7 @@ program
 program
     .command('open-index [name...]')
     .description('Open index or indexes [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
         CLI = new CLI({
@@ -112,7 +112,7 @@ program
 program
     .command('close-index [name...]')
     .description('close index or indexes [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, commander){
         CLI = new CLI({
@@ -126,7 +126,7 @@ program
 program
     .command('put-mappings <file/folder>')
     .description('Put mappings on elasticsearch index specified on file [-h -p -f -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'force the index creation', false)
     .option('-r --recursive', 'scan directory recursive')
@@ -142,7 +142,7 @@ program
 program
     .command('auto-mappings <file/folder>')
     .description('Put mappings on elasticsearch with auto detect changes [-h -p -f -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'force the index creation', false)
     .option('-r --recursive', 'scan directory recursive', false)
@@ -158,7 +158,7 @@ program
 program
     .command('put-data <file/folder>')
     .description('Put data into a elastic type [-h -p -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
     .action(function(fileDirectory, commander){
@@ -174,7 +174,7 @@ program
 program
     .command('delete-by-id [index] [type] [id]')
     .description('delete specific type element by id [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, type, id, commander){
         CLI = new CLI({
@@ -192,7 +192,7 @@ program
 program
     .command('delete-all [index] [type]')
     .description('delete all the data in an specific type [-h -p]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(index, type, commander){
         CLI = new CLI({
@@ -211,7 +211,7 @@ program
 program
     .command('extract [index] [type] [output]')
     .description('extract all the data from an specific index->type ready for put-data. output: /dir/file [-h -p -s=50 -t=30]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-s --size [size]', 'size to export', 50)
     .option('-t --time [time]', 'scroll time in seconds', '30')
@@ -234,7 +234,7 @@ program
 program
     .command('get-repo [repo]')
     .description('List or get the specific information from a repository')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(repository, commander){
         CLI = new CLI({
@@ -248,7 +248,7 @@ program
 program
     .command('create-repo [file|directory|path] [name|in-case-is-path]')
     .description('Create a repository. You can use a local directory or any plugin (AWS S3, etc...). Use -f to create a local repo with path [-f -r]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'Use path to create local', false)
     .option('-r --recursive', 'scan directory recursive')
@@ -275,7 +275,7 @@ program
 program
     .command('delete-repo [repository]')
     .description('Delete a repository by name')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
 
     .action(function(repoName, commander){
@@ -295,7 +295,7 @@ program
 program
     .command('get-snapshot [repo] [specific]')
     .description('List or get the specific information from a snapshot')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
@@ -314,7 +314,7 @@ program
 program
     .command('create-snapshot [repo] [snapshot_name] [indexes...]')
     .description('Create snapshot on a repository. Pass the indexes if you want specific indexes [-w]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
     .action(function(repository, snapshot, indexes, commander){
@@ -334,7 +334,7 @@ program
 program
     .command('delete-snapshot [repo] [snapshot_name]')
     .description('Remove Snapshot')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
@@ -353,7 +353,7 @@ program
 program
     .command('restore-snapshot [repo] [snapshot_name]')
     .description('Create snapshot on a repository. Pass the indexes if you want specific indexes [-w]')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
     .action(function(repository, snapshot, commander){
@@ -373,7 +373,7 @@ program
 program
     .command('status-snapshot [repo] [snapshot_name]')
     .description('Get the status of a snapshot')
-    .option('-h, --host [host]', 'specified host', 'localhost')
+    .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
     .action(function(repository, snapshot, commander){
