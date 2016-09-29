@@ -1,6 +1,6 @@
 {
   "name": "elastic-tool",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Elasticsearch tools on command line (index, mappings, repo, dump, etc...)",
   "bin": {
     "elastic": "app.js"
@@ -11,6 +11,10 @@
   },
   "author": "Ariel Rey",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arielfr/elastic-tool.git"
+  },
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
