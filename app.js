@@ -14,10 +14,12 @@ program
     .description('get template or templates information')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(template, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.getIndex(template, {});
@@ -29,10 +31,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileDirectory, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.putTemplate(fileDirectory, { recursive: (commander.recursive) ? true : false });
@@ -43,10 +47,12 @@ program
     .description('delete specific template')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(template, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.deleteTemplate(template, {});
@@ -57,10 +63,12 @@ program
     .description('get index or indexes info')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.getIndex(index, {});
@@ -72,10 +80,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileDirectory, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.putIndex(fileDirectory, { recursive: (commander.recursive) ? true : false });
@@ -86,10 +96,12 @@ program
     .description('delete specific index')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.deleteIndex(index, {});
@@ -100,10 +112,12 @@ program
     .description('Open index or indexes')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.openIndex(index, {});
@@ -114,10 +128,12 @@ program
     .description('close index or indexes')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.closeIndex(index, {});
@@ -130,10 +146,12 @@ program
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'force the index creation', false)
     .option('-r --recursive', 'scan directory recursive')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileDirectory, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.putMappings(fileDirectory, { force: commander.force, recursive: ((commander.recursive) ? true : false) ? true : false });
@@ -146,10 +164,12 @@ program
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'force the index creation', false)
     .option('-r --recursive', 'scan directory recursive', false)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileDirectory, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.autoMappings(fileDirectory, { force: commander.force, recursive: (commander.recursive) ? true : false });
@@ -161,10 +181,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-r --recursive', 'scan directory recursive', false)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileDirectory, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.putData(fileDirectory, { recursive: (commander.recursive) ? true : false });
@@ -176,10 +198,12 @@ program
     .description('delete specific type element by id')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, type, id, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(index === undefined || type === undefined || id === undefined){
@@ -194,10 +218,12 @@ program
     .description('delete all the data in an specific type')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, type, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(index === undefined || type === undefined){
@@ -217,10 +243,12 @@ program
     .option('-t --time [time]', 'scroll time in seconds', '30')
     .option('-f --force [force]', 'override file', false)
     .option('-i --id [id]', 'prevent copy the id', false)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(index, type, output, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(index === undefined || type === undefined || output === undefined){
@@ -236,10 +264,12 @@ program
     .description('List or get the specific information from a repository')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         CLI.getRepository(repository);
@@ -252,11 +282,12 @@ program
     .option('-p --port [port]', 'specified port', '9200')
     .option('-f --force [force]', 'Use path to create local', false)
     .option('-r --recursive', 'scan directory recursive')
-
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(fileOrPath, repoName, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(fileOrPath === undefined){
@@ -277,11 +308,12 @@ program
     .description('Delete a repository by name')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
-
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repoName, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repoName === undefined){
@@ -297,10 +329,12 @@ program
     .description('List or get the specific information from a snapshot')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repository === undefined){
@@ -317,10 +351,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, snapshot, indexes, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repository === undefined || snapshot === undefined){
@@ -336,10 +372,12 @@ program
     .description('Remove Snapshot')
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repository === undefined || snapshot === undefined){
@@ -356,10 +394,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repository === undefined || snapshot === undefined){
@@ -376,10 +416,12 @@ program
     .option('--host [host]', 'specified host', 'localhost')
     .option('-p --port [port]', 'specified port', '9200')
     .option('-w --wait [wait]', 'wait for completition', true)
+    .option('-a --apiVersion [apiVersion]', 'specified apiVersion', '2.4')
     .action(function(repository, snapshot, commander){
         CLI = new CLI({
             host: commander.host,
-            port: commander.port
+            port: commander.port,
+            apiVersion: commander.apiVersion
         });
 
         if(repository === undefined || snapshot === undefined){
