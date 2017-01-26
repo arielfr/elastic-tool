@@ -1,3 +1,6 @@
+[![NPM Version](https://img.shields.io/npm/v/elastic-tool.svg)](http://npmjs.com/package/elastic-tool)
+[![Downloads](https://img.shields.io/npm/dt/elastic-tool.svg)](http://npmjs.com/package/elastic-tool)
+
 # Elasticsearch Commander Tool
 
 This is a Elasticsearch tool made with [commander](https://www.npmjs.com/package/commander) for making basic operations
